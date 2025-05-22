@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="resume.css">
+    <link rel="icon" href="colloge.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <section id="container">
+        <div id="start">
+            <h1>Resume Builder</h1>
+        </div>
+        <div class="controls">
+            <select id="template-selector">
+                <option value="modern">Modern</option>
+                <option value="classic">Classic</option>
+            </select>
+            <input type="file" id="photo-upload" accept="image/*">
+        </div>
+
+        <form id="inputs">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="title" placeholder="Job Title" required>
+            <textarea name="summary" placeholder="Professional Summary"></textarea>
+            <textarea name="work" placeholder="Work Experience"></textarea>
+            <textarea name="education" placeholder="Education"></textarea>
+            <textarea name="skills" placeholder="Skills"></textarea required>
+            <textarea name="projects" placeholder="Projects"></textarea>
+            <textarea name="achievements" placeholder="Achievements"></textarea>
+            <input type="text" name="linkedin" placeholder="LinkedIn URL">
+            <input type="text" name="github" placeholder="GitHub URL">
+            <input type="tel" name="phone" id="phone-input" pattern="[0-9]*" inputmode="numeric" placeholder="Phone">
+            <input type="email" name="email" placeholder="Email" required>
+        </form>
+    </section>
+
+    <div id="resume-preview" style="display: none;">
+        <div id="res" class="modern">
+            <div id="res-header">
+                <img id="profile-pic" src="" alt="Profile Picture">
+                <div>
+                    <h1 id="res-name"></h1>
+                    <h2 id="res-title"></h2>
+                </div>
+            </div>
+            <div id="res-body">
+                <div id="left-column" class="draggable-zone">
+                    <div class="res-section" id="summary-section" draggable="true">
+                        <h2>Summary</h2>
+                        <p id="res-summary"></p>
+                    </div>
+                    <div class="res-section" id="skills-section" draggable="true">
+                        <h2>Skills</h2>
+                        <p id="res-skills"></p>
+                    </div>
+                    <div class="res-section" id="contact-section" draggable="true">
+                        <h2>Contact</h2>
+                        <p id="res-contact"><br></p>
+                    </div>
+                </div>
+                <div id="right-column" class="draggable-zone">
+                    <div class="res-section" id="work-section" draggable="true">
+                        <h2>Work Experience</h2>
+                        <p id="res-work"></p>
+                    </div>
+                    <div class="res-section" id="education-section" draggable="true">
+                        <h2>Education</h2>
+                        <p id="res-education"></p>
+                    </div>
+                    <div class="res-section" id="projects-section" draggable="true">
+                        <h2>Projects</h2>
+                        <p id="res-projects"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button id="generate-btn">Generate Resume</button>
+        <button id="download-pdf">Download PDF</button>
+    </div>
+
+    <script src="resume.js"></script>
+</body>
+</html>
