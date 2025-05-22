@@ -1,7 +1,5 @@
 # Resume-Builder
 A resume builder with different templates, pdf download, photo upload, drag and drop functionality.
-
-## Try It Live  
 ![image](https://github.com/user-attachments/assets/5ccd659f-d918-4f0d-bc08-6697923245ad)
 
 ## Features  
